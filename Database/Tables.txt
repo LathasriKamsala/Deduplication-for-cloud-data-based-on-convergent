@@ -1,0 +1,142 @@
+
+create database 3layer;
+
+use 3layer;
+
+
+CREATE TABLE `cloud` (
+  `name` text,
+  `pass` text
+);
+
+CREATE TABLE `downer` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` text,
+  `pass` text,
+  `email` text,
+  `mobile` text,
+  `addr` text,
+  `dob` text,
+  `gender` text,
+  `pin` text,
+  `location` text,
+  `imagess` longblob,
+  `status` text,
+  PRIMARY KEY  (`id`)
+);
+
+CREATE TABLE `results` (
+  `fname` text,
+  `tdelay` text,
+  `tpt` text
+);
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` text,
+  `pass` text,
+  `email` text,
+  `mobile` text,
+  `addr` text,
+  `dob` text,
+  `gender` text,
+  `pin` text,
+  `location` text,
+  `imagess` longblob,
+  `status` text,
+  PRIMARY KEY  (`id`)
+);
+
+INSERT INTO `cloud` VALUES ('cloud', 'cloud');
+
+
+CREATE TABLE `Fog` (
+  `name` text,
+  `pass` text
+);
+
+INSERT INTO `Fog` VALUES ('Fog', 'Fog');
+
+CREATE TABLE `cloudserver` (
+  `id` int(11) NOT NULL auto_increment,
+  `fname` text,
+  `ownername` text,
+  `cname` text,
+  `ct1` text,
+  `mac1` text,
+  `ct2` text,
+  `mac2` text,
+  `sk` text,
+  `dt` text,
+  `fsize` text,
+  `status` text,
+  `rank` int(11) default '0',
+  PRIMARY KEY  (`id`)
+);
+
+
+CREATE TABLE `localmachine` (
+  `id` int(11) NOT NULL auto_increment,
+  `fname` text,
+  `ownername` text,
+  `cname` text,
+  `ct3` text,
+  `mac3` text,
+PRIMARY KEY  (`id`)
+
+);
+
+CREATE TABLE `fogserver` (
+  `id` int(11) NOT NULL auto_increment,
+  `fname` text,
+  `ownername` text,
+  `cname` text,
+  `ct4` text,
+  `mac4` text,
+  PRIMARY KEY  (`id`)
+  
+);
+
+CREATE TABLE `transaction` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` text,
+  `fname` text,
+  `task` text,
+  `dt` text,
+  `fsize` text,
+  PRIMARY KEY (`id`)
+);
+
+
+CREATE TABLE `cpu_speed` (
+  `id` int(11) NOT NULL auto_increment,
+  `owner` text,
+  `fname` text,
+  `dt` text,
+  `task` text,
+  `cpuspeed` text,
+  PRIMARY KEY  (`id`)
+);
+
+
+CREATE TABLE `request` (
+  `id` int(11) NOT NULL auto_increment,
+  `user` text,
+  `owner` text,
+  `fname` text,
+  `download_per` text,
+  PRIMARY KEY  (`id`)
+);
+
+
+CREATE TABLE `attacker` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` text,
+  `fname` text,
+  `sk` text,
+  `dt` text,
+  `attacktype` text,
+  PRIMARY KEY (`id`)
+);
+
+
